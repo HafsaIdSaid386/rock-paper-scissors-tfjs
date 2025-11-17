@@ -1,26 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Rock Paper Scissors Classifier</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.12.0/dist/tf.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock • Paper • Scissors Classifier</title>
 
-  <style>
-    body { font-family: Arial; text-align: center; margin-top: 40px; }
-    #preview { width: 250px; margin-top: 20px; }
-  </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        #preview {
+            margin-top: 20px;
+            width: 350px;
+            display: none;
+            border: 4px solid #333;
+            border-radius: 8px;
+        }
+
+        #result {
+            font-size: 28px;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-  <h1>Rock • Paper • Scissors Classifier</h1>
-  <p>Upload an image and the model will predict!</p>
 
-  <input type="file" id="imageUpload" accept="image/*">
+    <h1>Rock • Paper • Scissors Classifier</h1>
 
-  <br>
-  <img id="preview" />
+    <p>Upload an image and the model will predict!</p>
 
-  <h2 id="result"></h2>
+    <input type="file" id="imageUpload" accept="image/*">
 
-  <script src="script.js"></script>
+    <br>
+    <img id="preview">
+
+    <div id="result">Model not loaded yet...</div>
+
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.12.0/dist/tf.min.js"></script>
+
+    <!-- Your script -->
+    <script src="script.js"></script>
+
 </body>
 </html>
