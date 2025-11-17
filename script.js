@@ -62,7 +62,9 @@ async function predict(imgElement) {
   let tensor = tf.browser.fromPixels(imgElement)
     .resizeNearestNeighbor([224, 224]) // same as training
     .toFloat()
-    .div(255.0)                        // normalize 0–1
+    // NOTE: your model already has a Rescaling(1/255) layer,
+    // so this extra div(255) is optional. You can comment it out if needed.
+    //.div(255.0)                      
     .expandDims();                     // [1, 224, 224, 3]
 
   const prediction = model.predict(tensor);
